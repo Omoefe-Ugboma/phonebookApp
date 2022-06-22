@@ -89,22 +89,84 @@
 //     even[i].style.backgroundColor = 'green';
 // }
 
-var newDiv = document.createElement('div');
+// var newDiv = document.createElement('div');
 
-// add a class
-newDiv.className = 'Ebuka';
+// // add a class
+// newDiv.className = 'Ebuka';
 
-newDiv.id = 'Solomon';
+// newDiv.id = 'Solomon';
 
-newDiv.setAttribute('title', 'Hello Div');
+// newDiv.setAttribute('title', 'Hello Div');
 
-// create text node
-var newDivText = document.createTextNode('Welcome to Nigeria');
+// // create text node
+// var newDivText = document.createTextNode('Welcome to Nigeria');
 
-// add text to div
-newDiv.appendChild(newDivText);
+// // add text to div
+// newDiv.appendChild(newDivText);
 
-console.log(newDiv);
+// console.log(newDiv);
+
+var form  = document.getElementById('addForm');
+
+var itemList = document.getElementById('items');
+
+// Form submit event
+form.addEventListener('submit', addItem);
+
+// Add a function to add item
+function addItem(e){
+    e.preventDefault();
+    // console.log(123);
+
+    // Get the input value
+    var newItem = document.getElementById('item').value;
+    // Create new li element
+    var li = document.createElement('li');
+    // Add class
+    li.className = 'list-group-item';
+    // console.log(li);
+
+    // Add text node with input
+    li.appendChild(document.createTextNode(newItem));
+    
+    //create delete button
+    var deleteBtn = document.createElement('button');
+    
+    // Add classes to del button
+    deleteBtn.className = 'btn btn-danger btn-sm float-right delete';
+
+    // Append text node
+    deleteBtn.appendChild(document.createTextNode('X'));
+    
+    // Append li to list 
+    li.appendChild(deleteBtn);
+
+    // Append li to list
+    itemList.appendChild(li);
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
